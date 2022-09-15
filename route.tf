@@ -36,14 +36,14 @@ resource "azurerm_route_table" "private_rt" {
     name                   = "internal_vnet"
     address_prefix         = var.vnetcidr
     next_hop_type          = "VirtualAppliance"
-    next_hop_in_ip_address = var.activeport3
+    next_hop_in_ip_address = var.activeport2
   }
 
   route {
     name                   = "internal_default"
     address_prefix         = "0.0.0.0/0"
     next_hop_type          = "VirtualAppliance"
-    next_hop_in_ip_address = var.activeport3
+    next_hop_in_ip_address = var.activeport2
   }
 
   tags = local.common_tags
