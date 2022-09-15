@@ -24,9 +24,10 @@ Terraform deploys the following components:
 * 2x Ubuntu 20.04 LTS test client VMs in each workload subnet.
 * UDRs for internal subnet routing table for default routing and inter-subnet routing through FortiGate
 * Choose PAYG or BYOL in variables - if BYOL, place .lic files in subfolder "licenses" and define in variables.
-* Terraform backend (versions.tf) stored in Azure storage - customise backend.conf to suit or modify as appropriate. An backend.conf.example is provided. 
+* Terraform backend (versions.tf) stored in Azure storage - customise backend.conf to suit or modify as appropriate. An backend.conf.example is provided or comment out the backend "azurerm" resource block.
 
 Topology using default variables
+
 ![img](https://github.com/wintermute000/azure-fgt-single/blob/main/azure-fgt-single.jpg)
 
 ## Deployment
