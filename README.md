@@ -27,7 +27,7 @@ Terraform deploys the following components:
 * Terraform backend (versions.tf) stored in Azure storage - customise backend.conf to suit or modify as appropriate. An backend.conf.example is provided. 
 
 Topology using default variables
-![img](https://github.com/wintermute000/azure-fgt-sdn-ha-crosszone-3port/blob/main/azure-fgt-single.jpg)
+![img](https://github.com/wintermute000/azure-fgt-single/blob/main/azure-fgt-single.jpg)
 
 ## Deployment
 
