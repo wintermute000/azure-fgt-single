@@ -123,6 +123,7 @@ resource "azurerm_network_interface" "activeport1" {
   name                          = "activeport1"
   location                      = var.location
   resource_group_name           = azurerm_resource_group.myterraformgroup.name
+  enable_ip_forwarding          = true
   enable_accelerated_networking = var.accelerate == "true" ? true : false
 
   ip_configuration {
