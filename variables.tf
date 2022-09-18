@@ -19,7 +19,7 @@ variable "tenant_id" {
 //  Check : https://docs.microsoft.com/en-us/azure/virtual-machines/linux/sizes
 variable "size" {
   type    = string
-  default = "Standard_F4"
+  default = "Standard_DS2_v2"
 }
 
 variable "client_size" {
