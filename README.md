@@ -23,8 +23,8 @@ Terraform deploys the following components:
 * Azure SDN connector using managed identity with reader.
 * 2x Ubuntu 20.04 LTS test client VMs in each workload subnet.
 * UDRs for internal subnet routing table for default routing and inter-subnet routing through FortiGate
-* Choose PAYG or BYOL in variables - if BYOL, place .lic files in subfolder "licenses" and define in variables.
-* Terraform backend (versions.tf) stored in Azure storage - customise backend.conf to suit or modify as appropriate. An backend.conf.example is provided or comment out the backend "azurerm" resource block.
+* FortiGate - Choose payg or byol in "license_type" variable (lowercase) - if byol and using license file, place .lic files in subfolder "licenses", define filename in "fgtlicense" variable and DO NOT populate the "fgtflextoken" variable. If using flex-vm, define token in "fgtflextoken" variable and DO NOT populate the "fgtlicense" variable. DO NOT populate a flex token variable if using a license file or vice versa.
+* Terraform backend (versions.tf) stored in Azure storage - customise backend.conf to suit when initialising or modify as appropriate. An backend.conf.example is provided or comment out the backend "azurerm" resource block.
 
 Topology using default variables
 

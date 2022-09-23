@@ -127,7 +127,7 @@ variable "custom_image_resource_group_name" {
 
 // License Type to create FortiGate-VM
 // Provide the license type for FortiGate-VM Instances, either byol or payg.
-// If BYOL the fourth static route (for vnet summary) is not automatically created due to inherent FortiOS limitation before licensing.
+// If byol then either supply license filename (in "licenses" subdir) or flex-vm token, DO NOT populate variable if not using
 variable "license_type" {
   default = "payg"
 }
@@ -261,13 +261,19 @@ variable "bootstrap-active" {
   default = "config-active.conf"
 }
 
-// license file for the active fgt
-variable "license" {
+// license file for the active fgt IF using byol and supplying license file in "licenses" subdir - DO NOT populate if using flex
+variable "fgtlicense" {
   // Change to your own byol license file, license.lic
   type    = string
-  default = "FGVM02TM22024054.lic"
+  default = ""
 }
 
+// Flex token for the active fgt IF using byol and using flex - DO NOT populate if supplying .lic file instead
+variable "fgtflextoken" {
+  // Change to your own Flex-VM token. 
+  type    = string
+  default = ""
+}
 
 variable "tags" {
   type = map(any)
